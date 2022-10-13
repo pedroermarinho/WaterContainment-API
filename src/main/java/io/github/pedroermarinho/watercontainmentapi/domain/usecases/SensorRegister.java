@@ -6,16 +6,17 @@ import io.github.pedroermarinho.watercontainmentapi.domain.repositories.SensorRe
 import org.springframework.stereotype.Service;
 
 @Service
-public class RegisterSensor {
+public class SensorRegister {
 
     private final SensorRepository sensorRepository;
 
-    public RegisterSensor(SensorRepository sensorRepository) {
+    public SensorRegister(SensorRepository sensorRepository) {
         this.sensorRepository = sensorRepository;
     }
 
     public SensorEntity save(NewSensorDTO newSensorDTO) {
         return sensorRepository.save(newSensorDTO);
     }
+
 
 }

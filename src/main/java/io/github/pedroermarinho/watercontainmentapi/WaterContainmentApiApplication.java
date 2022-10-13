@@ -1,15 +1,15 @@
 package io.github.pedroermarinho.watercontainmentapi;
 
-import io.github.pedroermarinho.watercontainmentapi.domain.usecases.RegisterSensor;
+import io.github.pedroermarinho.watercontainmentapi.domain.usecases.SensorRegister;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class WaterContainmentApiApplication {
 
-    private final RegisterSensor register;
+    private final SensorRegister register;
 
-    public WaterContainmentApiApplication(RegisterSensor register) {
+    public WaterContainmentApiApplication(SensorRegister register) {
         this.register = register;
     }
 

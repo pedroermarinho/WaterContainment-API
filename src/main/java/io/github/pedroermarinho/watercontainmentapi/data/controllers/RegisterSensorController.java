@@ -2,9 +2,8 @@ package io.github.pedroermarinho.watercontainmentapi.data.controllers;
 
 import io.github.pedroermarinho.watercontainmentapi.data.config.PathRest;
 import io.github.pedroermarinho.watercontainmentapi.domain.dtos.NewSensorDTO;
-import io.github.pedroermarinho.watercontainmentapi.domain.dtos.SensorDTO;
 import io.github.pedroermarinho.watercontainmentapi.domain.entities.SensorEntity;
-import io.github.pedroermarinho.watercontainmentapi.domain.usecases.RegisterSensor;
+import io.github.pedroermarinho.watercontainmentapi.domain.usecases.SensorRegister;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,9 +21,9 @@ import java.net.URI;
 @CrossOrigin(origins = "*")
 public class RegisterSensorController {
 
-    private final RegisterSensor registerSensor;
+    private final SensorRegister registerSensor;
 
-    public RegisterSensorController(RegisterSensor registerSensor) {
+    public RegisterSensorController(SensorRegister registerSensor) {
         this.registerSensor = registerSensor;
     }
 

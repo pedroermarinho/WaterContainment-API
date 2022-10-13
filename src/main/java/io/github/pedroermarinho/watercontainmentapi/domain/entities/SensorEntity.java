@@ -28,56 +28,10 @@ public class SensorEntity {
     @Column(nullable = false)
     private Long id;
 
-    private Double temperature;
-
-    private Double luminosity;
-
-    private Double airHumidity;
-
-    private Double soilHumidity;
+    private Double litrosMin;
 
 	@CreationTimestamp
 	private LocalDateTime createdAt;
-
-    public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Double getTemperature() {
-		return temperature;
-	}
-
-	public void setTemperature(Double temperature) {
-		this.temperature = temperature;
-	}
-
-	public Double getLuminosity() {
-		return luminosity;
-	}
-
-	public void setLuminosity(Double luminosity) {
-		this.luminosity = luminosity;
-	}
-
-	public Double getAirHumidity() {
-		return airHumidity;
-	}
-
-	public void setAirHumidity(Double airHumidity) {
-		this.airHumidity = airHumidity;
-	}
-
-	public Double getSoilHumidity() {
-		return soilHumidity;
-	}
-
-	public void setSoilHumidity(Double soilHumidity) {
-		this.soilHumidity = soilHumidity;
-	}
 
 	@Override
     public boolean equals(Object o) {

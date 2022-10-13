@@ -1,7 +1,6 @@
 package io.github.pedroermarinho.watercontainmentapi.data.seed;
 
-import io.github.pedroermarinho.watercontainmentapi.data.seed.data.SensorData;
-import io.github.pedroermarinho.watercontainmentapi.domain.usecases.RegisterSensor;
+import io.github.pedroermarinho.watercontainmentapi.domain.usecases.SensorRegister;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +12,7 @@ public class DatabaseSeeder implements CommandLineRunner {
     private final List<DataSeed> dataSeeds;
 
     public DatabaseSeeder(
-            RegisterSensor registerSensor
+            SensorRegister registerSensor
     ) {
         this.dataSeeds = List.of(
                 // new SensorData(registerSensor)

@@ -1,6 +1,7 @@
 package io.github.pedroermarinho.watercontainmentapi.data.controllers;
 
 import io.github.pedroermarinho.watercontainmentapi.data.config.PathRest;
+import io.github.pedroermarinho.watercontainmentapi.domain.usecases.CloseValve;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,18 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = PathRest.API + PathRest.VERSION + PathRest.LED)
 @CrossOrigin(origins = "*")
-public class LedController {
+public class ValveController{
 
-    @Operation(summary = "Ligar led 1")
-    @PatchMapping(value = "/on")
-    public ResponseEntity<Void> onLed() {
-        return ResponseEntity.ok().build();
+    private final CloseValve closeValve;
+
+    public ValveController(CloseValve closeValve) {
+        this.closeValve = closeValve;
     }
 
-
-    @Operation(summary = "Ligar led 1")
-    @PatchMapping(value = "/off")
-    public ResponseEntity<Void> offLed() {
+    @Operation(summary = "Fechar a válvula")
+    @PatchMapping(value = "/close-valve")
+    public ResponseEntity<Void> closeValve() {
+        closeValve.close();
         return ResponseEntity.ok().build();
     }
 
