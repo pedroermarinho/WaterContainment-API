@@ -76,6 +76,6 @@ public class MqttConnection implements MqttCallback {
     }
 
     public void publish(String topic, String message) throws MqttException {
-        client.publish(topic, message.getBytes(), qos, false);
+        client.publish(topic, message.getBytes(), 1, false);
     }
 }
